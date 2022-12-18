@@ -9,9 +9,9 @@ variable "ec2_instance_names" {
     description = "Names of EC2 instances"
     type = set(string)
     default = [
-        "ec2_instance_dev",
-        "ec2_instance_qa",
-        "ec2_instance_prod"
+        "ec2-instance-dev",
+        "ec2-instance-qa",
+        "ec2-instance-prod"
     ]
 }
 
@@ -31,8 +31,8 @@ variable "s3_buckets_names" {
     description = "Names of S3 buckets"
     type = map(string)
     default = {
-        dev  = "s3_bucket_dev"
-        qa   = "s3_bucket_qa"
-        prod = "s3_bucket_prod"
+        dev  = "s3-bucket-dev"
+        qa   = "s3-bucket-qa"
+        prod = "s3-bucket-prod"
     }
 }
