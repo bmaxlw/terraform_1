@@ -1,15 +1,20 @@
-variable "region" {
-    type = string
-    default = "us-east-1"
+# General
+variable "regions" {
+    type = map(string)
+    default = {
+        us = "us-east-1"
+        eu = "eu-west-1"
+    }
 }
 
+# EC2 Instances
 variable "ec2_instance_names" {
     description = "Names of EC2 instances"
     type = set(string)
     default = [
-        "ec2_instance_dev",
-        "ec2_instance_qa",
-        "ec2_instance_prod"
+        "ec2-instance-dev",
+        "ec2-instance-qa",
+        "ec2-instance-prod"
     ]
 }
 
@@ -22,4 +27,15 @@ variable "ec2_instance_ami" {
 variable "ec2_instance_type" {
     type = string
     default = "t2.micro"
+}
+
+# S3 Buckets
+variable "s3_buckets_names" {
+    description = "Names of S3 buckets"
+    type = map(string)
+    default = {
+        dev  = "s3-bucket-dev"
+        qa   = "s3-bucket-qa"
+        prod = "s3-bucket-prod"
+    }
 }
