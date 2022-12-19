@@ -1,7 +1,10 @@
 # General
-variable "region" {
-    type = string
-    default = "us-east-1"
+variable "regions" {
+    type = map(string)
+    default = {
+        us = "us-east-1"
+        eu = "eu-west-1"
+    }
 }
 
 # EC2 Instances
